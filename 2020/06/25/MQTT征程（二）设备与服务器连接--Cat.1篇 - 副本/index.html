@@ -6,16 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursite.com">
-  <title>---小赵の心得---</title>
+  <title>MQTT征程（二）设备与服务器连接--Cat.1篇 | ---小赵の心得---</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="---小赵の心得---">
-<meta property="og:url" content="https://yoursite.com/index.html">
+  <meta name="description" content="三月份在家偶然间团购到的Cat.1模块，话说19.9送开发板是真的超值唉（羊毛党本党(●’◡’●) 由于使用的是合宙官方的开发板，资料还算齐全，基本上没碰到什么问题。 不过目前调通只是AT版本固件的MQTT配置，优点是简单快捷，缺点是每次开机需要重新发送，不过可以通过对搭载的硬件进行配置解决弊端。（俗称问题不大~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MQTT征程（二）设备与服务器连接--Cat.1篇">
+<meta property="og:url" content="https://yoursite.com/2020/06/25/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%BE%E5%A4%87%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9E%E6%8E%A5--Cat.1%E7%AF%87%20-%20%E5%89%AF%E6%9C%AC/index.html">
 <meta property="og:site_name" content="---小赵の心得---">
+<meta property="og:description" content="三月份在家偶然间团购到的Cat.1模块，话说19.9送开发板是真的超值唉（羊毛党本党(●’◡’●) 由于使用的是合宙官方的开发板，资料还算齐全，基本上没碰到什么问题。 不过目前调通只是AT版本固件的MQTT配置，优点是简单快捷，缺点是每次开机需要重新发送，不过可以通过对搭载的硬件进行配置解决弊端。（俗称问题不大~">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604230651497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p6ajA0MzdfQ1NETg==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-06-25T12:37:05.000Z">
+<meta property="article:modified_time" content="2020-06-26T12:49:44.694Z">
 <meta property="article:author" content="小赵同学">
-<meta property="article:tag" content=" ">
+<meta property="article:tag" content="MQTT">
+<meta property="article:tag" content="物联网技术">
+<meta property="article:tag" content="MQTT征程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200604230651497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p6ajA0MzdfQ1NETg==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="---小赵の心得---" type="application/atom+xml">
   
@@ -149,16 +157,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-MQTT征程（二）设备与服务器连接--Cat.1篇 - 副本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-MQTT征程（二）设备与服务器连接--Cat.1篇 - 副本" class="article article-type-post " itemscope itemprop="blogPost">
 <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/25/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%BE%E5%A4%87%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9E%E6%8E%A5--Cat.1%E7%AF%87%20-%20%E5%89%AF%E6%9C%AC/">MQTT征程（二）设备与服务器连接--Cat.1篇</a>
+    <h1 class="article-title" itemprop="name">
+      MQTT征程（二）设备与服务器连接--Cat.1篇
     </h1>
   
 
@@ -179,9 +185,70 @@
 <p>由于使用的是合宙官方的开发板，资料还算齐全，基本上没碰到什么问题。</p>
 <p>不过目前调通只是AT版本固件的MQTT配置，优点是简单快捷，缺点是每次开机需要重新发送，不过可以通过对搭载的硬件进行配置解决弊端。（俗称问题不大~</p>
 <p><img src="https://img-blog.csdnimg.cn/20200604230651497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p6ajA0MzdfQ1NETg==,size_16,color_FFFFFF,t_70" alt="724UG开发板"></p>
-        
+<a id="more"></a>
+
+<p>这里记录一下相关操作（AT指令集备份</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AT+CPIN?</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">+CPIN: READY  &#x2F;&#x2F;查询sim卡是否正常</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AT+CGATT?</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">+CGATT: 1    &#x2F;&#x2F;查询是否附着上数据网络，如果返回+CGATT: 0表示未附着上</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AT+SAPBR&#x3D;3,1,&quot;CONTYPE&quot;,&quot;GPRS&quot;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AT+SAPBR&#x3D;3,1,&quot;APN&quot;,&quot;&quot;  &#x2F;&#x2F;设置APN，此处&quot;&quot;表示使用从网络端自动获取到的APN</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AT+SAPBR&#x3D;1,1       &#x2F;&#x2F;发起激活PDP的请求</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AT+SAPBR&#x3D;2,1       &#x2F;&#x2F;注意：此命令仅仅查询PDP地址，可以不执行</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">+SAPBR: 1,1,&quot;10.159.1.145&quot;  &#x2F;&#x2F;请求到的PDP地址</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AT+MCONFIG&#x3D;&quot;866289037465624&quot;,&quot;user&quot;,&quot;password&quot;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AT+MIPSTART&#x3D;&quot;lbsmqtt.airm2m.com&quot;,&quot;1884&quot;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">CONNECT OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AT+MCONNECT&#x3D;1,60</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">CONNACK OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AT+MSUB&#x3D;&quot;mqtt&#x2F;sub_topic&quot;,0</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">SUBACK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AT+MPUB&#x3D;&quot;mqtt&#x2F;pub_topic&quot;,0,0,&quot;publish 0 payload&quot;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AT+MPUB&#x3D;&quot;mqtt&#x2F;pub_topic&quot;,1,0,&quot;publish 1 payload&quot;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">PUBACK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">AT+MPUB&#x3D;&quot;mqtt&#x2F;pub_topic&quot;,2,0,&quot;publish 2 payload&quot;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">PUBREC</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">PUBCOMP</span><br></pre></td></tr></table></figure>
+
+<p>教程源地址:<a href="https://ask.openluat.com/article/937" target="_blank" rel="noopener">4G模块AT版本如何使用MQTT</a></p>
+<h4 id="配置模块倒不难-一会就搞好了-但是下面的设备端硬件设计和功能实现怕是要下点功夫了🤦‍"><a href="#配置模块倒不难-一会就搞好了-但是下面的设备端硬件设计和功能实现怕是要下点功夫了🤦‍" class="headerlink" title="配置模块倒不难,一会就搞好了,但是下面的设备端硬件设计和功能实现怕是要下点功夫了🤦‍"></a>配置模块倒不难,一会就搞好了,但是下面的设备端硬件设计和功能实现怕是要下点功夫了🤦‍</h4><h1 id="冲冲冲"><a href="#冲冲冲" class="headerlink" title="冲冲冲!!!!"></a>冲冲冲!!!!</h1>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃🍔🥠<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/支付宝.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/微信.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -224,16 +291,75 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/25/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%BE%E5%A4%87%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9E%E6%8E%A5--Cat.1%E7%AF%87%20-%20%E5%89%AF%E6%9C%AC/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursite.com/2020/06/25/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%BE%E5%A4%87%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9E%E6%8E%A5--Cat.1%E7%AF%87%20-%20%E5%89%AF%E6%9C%AC/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/04/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%BE%E5%A4%87%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9E%E6%8E%A5--Cat.1%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MQTT征程（二）设备与服务器连接--Cat.1篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -248,313 +374,61 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MQTT征程（二）设备与服务器连接--Cat.1篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/04/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%BE%E5%A4%87%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9E%E6%8E%A5--Cat.1%E7%AF%87/">MQTT征程（二）设备与服务器连接--Cat.1篇</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/04/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%BE%E5%A4%87%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9E%E6%8E%A5--Cat.1%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2020-06-04T12:37:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
-</a>
-         <!-- 需要添加的位置 -->
-         <!-- 开始添加字数统计-->
-        
-          <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>三月份在家偶然间团购到的Cat.1模块，话说19.9送开发板是真的超值唉（羊毛党本党(●’◡’●)</p>
-<p>由于使用的是合宙官方的开发板，资料还算齐全，基本上没碰到什么问题。</p>
-<p>不过目前调通只是AT版本固件的MQTT配置，优点是简单快捷，缺点是每次开机需要重新发送，不过可以通过对搭载的硬件进行配置解决弊端。（俗称问题不大~</p>
-<p><img src="https://img-blog.csdnimg.cn/20200604230651497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p6ajA0MzdfQ1NETg==,size_16,color_FFFFFF,t_70" alt="724UG开发板"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MQTT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">物联网技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MQTT征程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/实训笔记//" class="article-tag-list-link color5">实训笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/实训笔记/MQTT征程//" class="article-tag-list-link color2">MQTT征程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/04/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E8%AE%BE%E5%A4%87%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9E%E6%8E%A5--Cat.1%E7%AF%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#配置模块倒不难-一会就搞好了-但是下面的设备端硬件设计和功能实现怕是要下点功夫了🤦‍"><span class="toc-number">1.</span> <span class="toc-text">配置模块倒不难,一会就搞好了,但是下面的设备端硬件设计和功能实现怕是要下点功夫了🤦‍</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#冲冲冲"><span class="toc-number"></span> <span class="toc-text">冲冲冲!!!!</span></a>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+   
+            <section id="comments" class="comments">
+              <style>
+                .comments{margin:30px;padding:10px;background:#fff}
+                @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+              </style>
+              <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'true' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'GPHwHEItzftrNgCA78dVph1p-gzGzoHsz',
+      app_key: 'Ux1DyBGwKhoGwW0HChtHFzYt',
+      placeholder: 'ヾﾉ≧∀≦)o快活啊!'
+    });
+</script>
+          </section>
+        
 
   
-    <article id="post-MQTT征程（一）MQTT服务器搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89MQTT%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">MQTT征程(一)服务器搭建</a>
-    </h1>
   
 
-        
-        <a href="/2020/05/29/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89MQTT%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-05-29T12:37:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-         <!-- 需要添加的位置 -->
-         <!-- 开始添加字数统计-->
-        
-          <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本来这个网站是打算建在云服务器上，但实操发现GithubPage+CodingPage的方式更适合刚上手的小白（是本人没错了！</p>
-<p>因此，购买的服务器就搁置了，最近突发奇想一个小型MQTT项目，刚好需要用的资源手头都有，So从这个项目的核心—-mosquitto（开源消息代理,实现了MQTT协议版本3.1和3.1.1）开始入手。</p>
-<h1 id="什么是MQTT"><a href="#什么是MQTT" class="headerlink" title="什么是MQTT"></a>什么是MQTT</h1><p><strong>MQTT(消息队列遥测传输)是ISO 标准下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议。</strong></p>
-<p>MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT协议是轻量、简单、开放和易于实现的，这些特点使它适用范围非常广泛。在很多情况下，包括受限的环境中，如：机器与机器（M2M）通信和物联网（IoT）。其在，通过卫星链路通信传感器、偶尔拨号的医疗设备、智能家居、及一些小型化设备中已广泛使用。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200529205701876.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p6ajA0MzdfQ1NETg==,size_16,color_FFFFFF,t_70" alt="MQTT"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MQTT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">物联网技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MQTT征程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/实训笔记//" class="article-tag-list-link color5">实训笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/实训笔记/MQTT征程//" class="article-tag-list-link color2">MQTT征程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/29/MQTT%E5%BE%81%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89MQTT%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-梦开始的地方" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/08/%E6%A2%A6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%9C%B0%E6%96%B9/">梦开始的地方</a>
-    </h1>
   
 
-        
-        <a href="/2020/04/08/%E6%A2%A6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%9C%B0%E6%96%B9/" class="archive-article-date">
-  	<time datetime="2020-04-08T09:22:30.667Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
-</a>
-         <!-- 需要添加的位置 -->
-         <!-- 开始添加字数统计-->
-        
-          <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>搭这个小破站花了我将近四天的时间，功夫不负有心人吧，简单装饰一下，存个心得笔记什么的还是很不错滴O(∩_∩)O</strong><br><img src="https://img-blog.csdnimg.cn/20200408174231785.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3p6ajA0MzdfQ1NETg==,size_16,color_FFFFFF,t_70#pic_cente" alt="梦开始的地方"></p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/08/%E6%A2%A6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%9C%B0%E6%96%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -585,8 +459,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
